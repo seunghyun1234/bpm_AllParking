@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+
+    <script th:src="@{/js/header.js}"></script>
+    <title>주차의 민족
+    </title>
+
+</head>
+
+<body>
+<header th:insert="header :: header"></header>
+    <section>
+        <div class="loginform">
+            <h2>ALL PARKING</h2>
+            <form class="login" action="/member/login" method="post">
+                <p class="login1">login</p>
+                <p>ACOUNT ID <input type="text" class="textbox" name="memberId" id="memberId"></p>
+                <p>PASSWORD <input type="password" class="textbox" name="memberPassword" id="memberPassword"></p>
+                <input type="submit" name="로그인" id="login" class="loginput" value="login">
+            </form>
+            <div class="find">
+                <div class="input">
+                    <input type="checkbox">
+                    <p>아이디 저장</p>
+                </div>
+                <div>
+                    <p><a href="">아이디/비밀번호 찾기</a></p>
+                </div>
+            </div>
+            <p class="next">다음 계정으로 로그인</p>
+            <div class="athor">
+                <a href="">
+                    <img th:src="@{/image/kakao.png}" alt=""></a>
+                <a href="">
+                    <img th:src="@{/image/naver.png}" alt=""></a>
+                <a href="">
+                    <img th:src="@{/image/google.png}" alt=""></a>
+            </div>
+<!--            <input type="button" class="join" value="회원가입">-->
+            <a href="/member/join">회원가입</a>
+        </div>
+
+
+    </section>
+<footer th:insert="footer :: footer"></footer>
+</body>
+
+</html>

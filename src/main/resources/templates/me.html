@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/me.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <script th:src="@{/js/header.js}"></script>
+    <script type="text/javascript" th:src="@{/js/me.js}"></script>
+
+    <title>주차의 민족
+    </title>
+</head>
+
+<body>
+
+    <header th:insert="header :: header"></header>
+    <section>
+        <div class="sec1">
+            <div class="me1">
+                <h2>안녕하세요.</h2>
+                <p><strong>ALL PARKING</strong>에 오신것을 환영합니다.</p>
+                <p>저희 팀은 <strong>Spring Boot</strong> 를 기반으로 주차정보 시스템을 구축한 홈페이지를 만들었습니다.</p>
+                <p>여러분의 편안한 주차생활을 위하여 열심히 만들었습니다.</p>
+                <p>잘 부탁드립니다.</p>
+            </div>
+            <div class="parking1">
+                <img th:src="@{/image/parking-lot-04.png}" alt="" class="parkingimg1">
+            </div>
+        </div>
+
+    </section>
+    <section>
+        <div class="sec2">
+            <div class="me2">
+                <div>
+                    <img src="./image/1.png" alt="" class="img">
+                    <h3>주차장 공간 부족</h3>
+                    <p>도시 지역에서 주차 공간이 부족하며,<br> 불법 주정차가 증가함.</p>
+                </div>
+                <div>
+                    <img src="./image/2.png" alt="" class="img">
+                    <h3>주차장 정보 부족</h3>
+                    <p>주차장 위치 및 운영 정보 부족으로
+                        <br>이용자들의 불편함.
+                    </p>
+                </div>
+                <div>
+                    <img src="./image/3.png" alt="" class="img">
+                    <h3>주차 요금체계 불투명성</h3>
+                    <p>주차 요금 불투명성과 높은 주차비로<br>이용자들의 불만.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="sec3">
+            <div class="me3">
+                <div>
+                    <img src="./image/주차장.jpg" alt="" class="parkinging2">
+                </div>
+                <div class="p3">
+                    <h2>위치, 이용 요금, 운영 시간 등 <br> 정보를 미리 확인할 수 있어요.</h2>
+                    <p>현장 요금 대비 평균 60% 이상 할인된 모바일<br>
+                        주차권을 구매하고 편리하게 주차장을 이용하세요.</p>
+                </div>
+            </div>
+        </div>
+        <input class="moveTopBtn" type="image" src="./image/uparrow.png" alt="맨위로" />
+    </section>
+    <footer th:insert="footer :: footer"></footer>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/map.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+
+    <script th:src="@{/js/header.js}"></script>
+    <title>주차의 민족
+    </title>
+
+</head>
+
+<body>
+    <section>
+        <div class="maper">
+            <input type="checkbox" class="btn" id="buton">
+            <label for="buton">
+                <img src="./image/angle-right-solid.svg" alt="">
+            </label>
+            <div class="list">
+                <p>목적지 검색</p>
+                <form class="serch">
+                    <input type="text" class="serchtext">
+                    <input type="button" class="serchbt">
+                </form>
+                <table>
+                    <th>주차장 이름</th>
+                    <td>바보주차장</td>
+                    <tr>
+                        <td>주소</td>
+                        <td>전화번호</td>
+                        <td>요금</td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+        <div class="map">
+            <p>멍청이</p>
+        </div>
+    </section>
+</body>
+
+</html>

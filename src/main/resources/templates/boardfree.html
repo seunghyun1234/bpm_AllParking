@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/board.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+
+    <script th:src="@{/js/header.js}"></script>
+    <title>주차의 민족
+    </title>
+
+
+
+</head>
+
+<body>
+
+<header th:insert="header :: header"></header>
+    <section>
+        <div class="bord">
+            <div id="bbs">
+                <div id="bbs_title">
+                    <h2>게 시 판</h2>
+                </div>
+                <div>
+                    <div class="form_a">
+                        <div class="title">
+                            <p>번호</p>
+                            <p th:text="${board.id}"></p>
+                        </div><div class="title">
+                            <p>제목</p>
+                            <p th:text="${board.boardTitle}"></p>
+                        </div>
+                        <div class="wirte_form">
+                            <div>
+                                <p>작 성 자</p>
+                                <p th:text="${board.boardWriter}"></p>
+                            </div>
+                            <div>
+                                <p>시 간</p>
+                                <p th:text="${board.boardCreatedTime}"></p>
+                            </div>
+                            <div>
+                                <p>조회수</p>
+                                <p th:text="${board.boardHits}"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div>
+                    <div class="detail">
+                        <p th:text="${board.boardContents}"></p>
+                    </div>
+                    <div id="bbsCreated_footer">
+                        <button class="btn2" onclick="listReq()">목록</button>
+                        <button class="btn2" onclick="updateReq()">수정</button>
+                        <button class="btn2" onclick="deleteReq()">삭제</button>
+                    </div>
+                </div>
+                <div class="comment-title">
+                    <h3>comment</h3>
+                </div>
+                <form action="" class="cmm">
+                    <div class="comment">
+                        <p>댓글 쓰기</p>
+                        <input type="text">
+                        <button>등록</button>
+                    </div>
+                    <div class="com">
+                        <div class="com2">
+                            <p>작성자</p>
+                            <div>
+                                <button class="modify">삭제</button>
+                                <button class="modify">수정</button>
+                            </div>
+                        </div>
+                        <input type="date" class="date">
+                        <p class="a">내용</p>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </section>
+<footer th:insert="footer :: footer"></footer>
+</body>
+<script th:inline="javascript">
+    const listReq = () => {
+        console.log("목록 요청");
+        const page =[[${page}]];
+        location.href="/info/paging?page="+page;
+    }
+    const updateReq = () =>{
+        console.log("수정 요청");
+        const id = [[${board.id}]];
+        location.href="/info/update/"+id;
+    }
+    const deleteReq = () => {
+        console.log("삭제 요청");
+        const id =[[${board.id}]];
+        location.href="/info/delete/"+id;
+    }
+
+
+</script>
+
+</html>

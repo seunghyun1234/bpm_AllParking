@@ -1,0 +1,243 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+html {
+    font-family: "Noto Sans KR", sans-serif;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    border-bottom: 2px solid rgb(0, 119, 255);
+    background-color: white;
+    z-index: 99;
+}
+
+.logo {
+    font-size: 55px;
+    top: -30px;
+    left: 150px;
+    height: 100px;
+    width: 200px;
+
+    position: absolute;
+}
+
+ul {
+
+    list-style: none;
+}
+
+.menu {
+    position: absolute;
+    left: 50%;
+    margin-left: -500px;
+    justify-content: space-between;
+    top: -15px;
+    height: 100px;
+    width: 1000px;
+    display: flex;
+    line-height: 95px;
+    padding-right: 2px;
+    text-align: center;
+
+
+}
+
+.menu>li {
+
+    width: 250px;
+    text-align: center;
+
+
+}
+
+.menu>.font {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.sign {
+    position: absolute;
+    right: 2%;
+    bottom: 12px;
+    height: 50px;
+    width: 150px;
+    justify-content: space-between;
+    display: flex;
+    font-size: 15px;
+}
+
+.sign>li {
+    line-height: 50px;
+    display: block;
+    text-align: center;
+    width: 100px;
+}
+
+.container {
+    display: none;
+    position: absolute;
+    top: 100px;
+    height: 200px;
+    width: 100%;
+    background-color: white;
+    opacity: 0.7;
+    z-index: 99;
+    border-bottom: 1px solid #cfcfcf;
+}
+
+.sub {
+    display: none;
+    list-style: none;
+    font-size: 18px;
+    font-weight: 300;
+    height: 206px;
+    margin-left: 4px;
+    margin-top: 17px;
+    z-index: 99;
+}
+
+.sub>li {
+    height: 60px;
+    line-height: 60px;
+    width: 165px;
+
+}
+
+a {
+    text-decoration-line: none;
+    color: inherit;
+    /* 링크의 색상 제거 */
+
+}
+
+/*--------------------------------------------------------*/
+section {
+    position: relative;
+    width: 100%;
+    display: flex;
+}
+.maper{
+    width: 450px;
+    height: 931px;
+    align-content: space-between;
+    display: flex;
+    
+}
+.maper .list{
+    /* width: 450px;
+    border: 1px solid black; */
+    width: 450px;
+    height: 100%;
+    margin-top: 100px;
+    position: fixed;
+    top: 0;
+    left: -450px;
+    z-index: 3;
+    transition: all .35s;
+    background-color: white;
+    border-right: 1px solid black;
+}
+.list p{
+    line-height: 50px;
+}
+.maper .map{
+    width: 100%;
+    margin-top: 100px;
+    border:  1px solid black;
+}
+section .maper .list p{
+    width: 100%;
+    height: 50px;
+    margin: auto 0;
+    font-size: 15px;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+.serch{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 5px;
+    border-bottom: 1px solid black;
+}
+.serch>.serchtext{
+    display: block;
+    width: 300px;
+    height: 30px;
+}
+.serch>.serchbt{
+    display: block;
+    width: 70px;
+    height: 30px;
+    margin-top:3px;
+    
+} 
+table{
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    margin: 1px;
+}
+table th{
+    padding: 0;
+    text-align: center;
+}
+
+.btn{
+    display: none;
+    font-size: 15px;
+    margin-top: 350px;
+    left: 450px;
+
+    z-index: -3;
+}
+.btn + label{
+    display: block;
+    width: 60px;
+    height: 50px;
+    left: 0;
+    top: calc(50% - 25px);
+    transition: all 0.35s;
+    position: fixed;
+}
+.btn:checked + label{
+    z-index: 2;
+    left: 450px;
+}
+.btn:checked + label + div{
+    left: 0;
+}
+label img{
+    width: 50px;
+    height: 50px;
+}
+
+/*-------------------------------------------------------*/
+footer {
+    margin: auto;
+    width: 1000px;
+    height: 100px;
+    margin-top: 30px;
+    border-top: 1px solid black;
+}
+
+.feet {
+    text-align: center;
+}
+
+.foot {
+    text-align: center;
+}
+
+.foot>a {
+    padding-left: 10px;
+}

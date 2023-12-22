@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+
+    <script th:src="@{/js/header.js}"></script>
+    <title>ALL PARKING
+    </title>
+</head>
+<body>
+<div class="container"></div>
+    <header th:insert="header :: header"></header>
+    <section>
+        <div class="keyboard">
+            <span class="key">A</span>
+            <span class="key">L</span>
+            <span class="key">L</span>
+            <span class="key">&nbsp;</span>
+            <span class="key">P</span>
+            <span class="key">A</span>
+            <span class="key">R</span>
+            <span class="key">K</span>
+            <span class="key">I</span>
+            <span class="key">N</span>
+            <span class="key">G</span>
+        </div>
+
+    </section>
+</body>
+<footer th:insert="footer :: footer"></footer>
+</html>

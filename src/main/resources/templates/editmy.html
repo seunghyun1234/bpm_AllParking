@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/editmy.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+
+    <script th:src="@{/js/header.js}"></script>
+    <title>ALL PARKING
+    </title>
+
+</head>
+<body>
+<header th:insert="header :: header"></header>
+    <section>
+        <div class="join">
+            <h2>ALL PARKING</h2>
+            <div class="basic">
+                <h3>기본정보</h3>
+                <div class="id">
+                    <p>아이디</p>
+                    <input type="text" class="text" name="id" id="id">
+                </div>
+                <div class="pw">
+                    <p>비밀번호</p>
+                    <input type="password" class="text">
+                </div>
+                <div class="pw1">
+                    <p>비밀번호 확인</p>
+                    <input type="password" class="text">
+                </div>
+                <div class="name">
+                    <p>이름</p>
+                    <input type="text" class="text">
+                </div>
+                <div class="number">
+                    <p>휴대전화</p>
+                    <input type="tel" class="text">
+                </div>
+                <div class="mail">
+                    <p>이메일</p>
+                    <input type="text" class="text">
+                </div>
+                <h3>차량정보</h3>
+                <div class="carinfo">
+                    <p>차량번호</p>
+                    <input type="text" class="text">
+                    <input type="button" class="bt" name="변경하기" value="변경하기">
+                </div>
+                <div class="bt1">
+                    <input type="button" class="submit" name="회원정보 변경" value="회원정보 변경">
+                    <input type="button" class="submit" name="취소" value="취소">
+                </div>
+            </div>
+        </div>
+    </section>
+<footer th:insert="footer :: footer"></footer>
+</body>
+</html>

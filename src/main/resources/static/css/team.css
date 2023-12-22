@@ -1,0 +1,140 @@
+
+/*--------------------------------------------------------*/
+section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    height: 84vh;
+}
+.team{
+    position: absolute;
+    top: 220px;
+    left: 370px;
+    line-height: 70px;
+    width: 1200px;
+ }
+ .team h2{
+    text-align: center;
+    font-size: 50px;
+ }
+ .member{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 1000px;
+    text-align: center;
+    margin: auto;
+    right: 110px;
+    line-height: 40px;
+    font-size: 20px;
+ }
+
+section .team .member img{
+    width: 170px;
+    height: 170px;
+}
+
+.button{ 
+    display: inline-block;
+    top:50%; 
+    left:50%;
+    margin-top:35px; 
+    margin-left:-10px;
+    line-height:15px; 
+    cursor:pointer;
+    border: 0px;
+    background-color: white;
+  }
+  .modal{ 
+    position:absolute; 
+    width:100%; 
+    height:100%; 
+    /* background: rgba(0,0,0,0.1);  */
+    top:0; 
+    left:0; 
+    display:none;
+  }
+
+
+  
+  .modal_content1{
+    width:800px; 
+    height:500px;
+    background:rgba(225, 225, 225, 0.2); 
+    border-radius:10px;
+    position:relative; 
+    top:0%; 
+    left:30%;
+    margin-top:-100px; 
+    margin-left:-200px;
+    text-align:center;
+    box-sizing:border-box; 
+    padding:74px 0;
+    line-height:23px; 
+    cursor:pointer;
+  }
+  .modal_content2{
+    width:800px; 
+    height:500px;
+    background:rgba(225, 225, 225, 0.2); 
+    border-radius:10px;
+    position:relative; 
+    top:0%; 
+    left:30%;
+    margin-top:-100px; 
+    margin-left:-200px;
+    text-align:center;
+    box-sizing:border-box; 
+    padding:74px 0;
+    line-height:23px; 
+    cursor:pointer;
+  }
+  .modal_content3{
+    width:800px; 
+    height:500px;
+    background:rgba(225, 225, 225, 0.2); 
+    border-radius:10px;
+    position:relative; 
+    top:0%; 
+    left:30%;
+    margin-top:-100px; 
+    margin-left:-200px;
+    text-align:center;
+    box-sizing:border-box; 
+    padding:74px 0;
+    line-height:23px; 
+    cursor:pointer;
+  }
+  .modal_content4{
+    width:800px; 
+    height:500px;
+    background:rgba(225, 225, 225, 0.2); 
+    border-radius:10px;
+    position:relative; 
+    top:0%; 
+    left:30%;
+    margin-top:-100px; 
+    margin-left:-200px;
+    text-align:center;
+    box-sizing:border-box; 
+    padding:74px 0;
+    line-height:23px; 
+    cursor:pointer;
+  }
+  .modal_content5{
+    width:800px; 
+    height:500px;
+    background:rgba(225, 225, 225, 0.2); 
+    border-radius:10px;
+    position:relative; 
+    top:0%; 
+    left:30%;
+    margin-top:-100px; 
+    margin-left:-200px;
+    text-align:center;
+    box-sizing:border-box; 
+    padding:74px 0;
+    line-height:23px; 
+    cursor:pointer;
+  }
+/*-------------------------------------------------------*/

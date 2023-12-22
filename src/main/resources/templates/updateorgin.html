@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/boardupdate.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+
+    <script th:src="@{/js/header.js}"></script>
+    <title>ALL PARKING
+    </title>
+</head>
+
+<body>
+<div class="container"></div>
+<header th:include="header :: header"></header>
+    <section>
+        <div class="bord">
+            <div id="bbs">
+                <div id="bbs_title">
+                    <h2>글 수 정</h2>
+                </div>
+                <form action="/info/update" method="post" name="updateForm">
+                    <input type="hidden" name="id" th:value="${boardUpdate.id}">
+                    writer : <input type="text" name="boardWriter" th:value="${boardUpdate.boardWriter}" readonly><br>
+                    pass : <input type="text" name="boardPass" id="boardPass"><br>
+                    title : <input type="text" name="boardTitle" th:value="${boardUpdate.boardTitle}"><br>
+                    contents : <textarea name="boardContents" cols="30" rows="10" th:text="${boardUpdate.boardContents}"> </textarea><br>
+                    <input type="hidden" name="boardHits" th:value="${boardUpdate.boardHits}">
+                    <input type="button" value="글수정" onclick="boardUpdate()">
+                </form>
+            </div>
+        </div>
+    </section>
+
+<footer th:include="footer :: footer"></footer>
+</body>
+<script th:inline="javascript">
+    const boardUpdate = () =>{
+        const pass = [[${boardUpdate.boardPass}]];
+        const inputPass = document.getElementById("boardPass").value;
+        if (pass == inputPass){
+            document.updateForm.submit();
+        }else {
+            alert("비밀번호가 일치 하지 않습니다.");
+        }
+
+    }
+</script>
+
+</html>
