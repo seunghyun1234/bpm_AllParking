@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/delete1.css}">
+
+
+
+    <title>ALL PARKING
+    </title>
+
+
+</head>
+<body>
+<section>
+    <div class="song">
+        <form  id="delete-form" th:method="post" th:action="@{/member/delete1}" th:object="${userDTO}">
+            <div>
+                <label th:for="nowPassword">현재 비밀번호
+                <input type="password" th:field="*{nowPassword}" placeholder="현재 비밀번호를 입력해주세요."/>
+                </label>
+            </div>
+            <br/>
+            <div>
+                <button type="button" id="childValue" onclick="clickDelete()">회원 탈퇴</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<script th:inline="javascript">
+    function clickDelete() {
+        if (confirm("탈퇴하면 작성한 글, 댓글이 모두 삭제되고 계정을 복구할 수 없습니다.\n정말 탈퇴하시겠습니까?")) {
+            // 새로운 폼 엘리먼트를 동적으로 생성합니다.
+            var form = document.createElement('form');
+            form.method = 'POST';
+            form.action = '/member/delete1';
+
+            // 현재 비밀번호 값을 가져와 폼에 추가합니다.
+            var nowPasswordInput = document.createElement('input');
+            nowPasswordInput.type = 'hidden';
+            nowPasswordInput.name = 'nowPassword';
+            nowPasswordInput.value = document.getElementById('nowPassword').value;
+            form.appendChild(nowPasswordInput);
+
+            // 여러 파라미터를 추가할 경우 위의 과정을 반복합니다.
+
+            // 폼을 body에 추가합니다.
+            document.body.appendChild(form);
+
+            // 폼을 서브밋합니다.
+            form.submit();
+
+            // 부모 창을 리다이렉트합니다.
+            window.opener.location.href = '/logout';
+
+            // 창을 닫습니다.
+            window.close();
+        }
+    }
+</script>
+</body>
+</html>

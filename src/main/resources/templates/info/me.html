@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" th:href="@{/css/me.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <script th:src="@{/js/header.js}"></script>
+    <script type="text/javascript" th:src="@{/js/me.js}"></script>
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "eL2rD3ATwZFP2lSwcWbqY",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+            src="https://www.chatbase.co/embed.min.js"
+            chatbotId="eL2rD3ATwZFP2lSwcWbqY"
+            domain="www.chatbase.co"
+            defer>
+    </script>
+    <title>주차의 민족
+    </title>
+</head>
+
+<body>
+<div class="container"></div>
+<header th:insert="fragments/header :: header"></header>
+<section>
+    <div class="sec1">
+        <div class="me1">
+            <h2>안녕하세요! BPM입니다</h2>
+            <br>
+            <p>우리의 목표는 무엇일까요?<br>
+                <strong style="color: rgb(0, 119, 255);">BPM</strong>은 주차 공간을 관리하고 활용하는 새로운 방법을 탐구하며,<br>
+                도시 생활의 편의성을 향상시키기 위해 노력하고 있습니다.<br>
+                우리는 현대 도시 환경에서의 주차 문제를 해결하고자 하며, <br>
+                효율적이고 지능적인 솔루션을 제공하여 모든 이용자에게 편안한 주차 경험을 돕겠습니다.</p>
+        </div>
+        <div class="parking1">
+            <img th:src="@{/image/parking-lot-04.png}" alt="" class="parking1_img">
+            <p style="font-size: 5px; color: wheat;">https://www.getmyparking.com/gmp-lot.php</p>
+        </div>
+    </div>
+
+</section>
+<section>
+    <div class="sec2">
+        <div class="me2">
+            <div>
+                <img src="./image/1.png" alt="" class="img">
+                <h3>주차장 공간 부족</h3>
+                <p>도시 지역에서 주차 공간이 부족하며,<br> 불법 주정차가 증가함.</p>
+            </div>
+            <div>
+                <img src="./image/2.png" alt="" class="img">
+                <h3>주차장 정보 부족</h3>
+                <p>주차장 위치 및 운영 정보 부족으로
+                    <br>이용자들의 불편함.
+                </p>
+            </div>
+            <div>
+                <img src="./image/3.png" alt="" class="img">
+                <h3>주차 요금체계 불투명성</h3>
+                <p>주차 요금 불투명성과 높은 주차비로<br>이용자들의 불만.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="me4">
+        <img src="/image/contents1.png" alt="" class="parking3">
+    </div>
+</section>
+<section>
+    <div class="sec3">
+        <div class="me3">
+            <div>
+                <img src="./image/주차장.jpg" alt="" class="parking1_img">
+                <p><a style="font-size: 5px; color: wheat;"
+                      href="https://kr.freepik.com/free-vector/parking-lot-isometric-composition_4385335.htm#query=%EC%A3%BC%EC%B0%A8%EC%9E%A5&position=5&from_view=keyword&track=sph&uuid=4f249a06-4855-4e20-b07b-89a7a23bf742">작가
+                    macrovector 출처 Freepik</a></p>
+            </div>
+
+            <div class="p3">
+                <h2>위치, 이용 요금, 운영 시간 등 정보를 미리 확인할 수 있어요.</h2>
+                <br>
+                <p>현장 요금 대비 평균 60% 이상 <br>할인된 모바일
+                    주차권을 구매하고 편리하게 주차장을 이용하세요.</p>
+            </div>
+        </div>
+    </div>
+    <input class="moveTopBtn" type="image" src="./image/uparrow.png" alt="맨위로"/>
+    <iframe
+            src="https://www.chatbase.co/chatbot-iframe/eL2rD3ATwZFP2lSwcWbqY"
+            frameborder="0"
+            style="display: none"
+    ></iframe>
+
+</section>
+
+<footer th:include="fragments/footer :: footer"></footer>
+</body>
+
+</html>

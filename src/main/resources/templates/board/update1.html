@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/boardupdate.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+
+    <script th:src="@{/js/header.js}"></script>
+
+    <title>ALL PARKING
+    </title>
+</head>
+
+<body>
+<div class="container"></div>
+<header th:include="fragments/header :: header"></header>
+    <section>
+        <div class="bord">
+            <div id="bbs">
+                <div id="bbs_title">
+                    <h2>글 수 정</h2>
+                </div>
+                <form action="/board/update" method="post" name="updateForm">
+                    <div id="bbsCreated">
+                        <div class="bbsCreated_bottomLine">
+                            <dl>
+                                <input type="hidden" name="id" th:value="${boardUpdate.id}">
+                            </dl>
+                            <dl>
+                                <dt>제&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;목</dt>
+                                <dd>
+                                    <input type="text" name="boardTitle" size="60" maxlength="100" class="boxTF" th:value="${boardUpdate.boardTitle}">
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="bbsCreated_bottomLine">
+                            <dl>
+                                <dt>작성자</dt>
+                                <dd>
+                                    <input type="text" name="boardWriter" size="35" maxlength="20" class="boxTF" th:value="${boardUpdate.boardWriter}" readonly>
+                                </dd>
+                            </dl>
+                        </div>
+<!--                        <div class="bbsCreated_noLine">-->
+<!--                            <dl>-->
+<!--                                <dt>패스워드</dt>-->
+<!--                                <dd>-->
+<!--                                    <input type="text" name="boardPass" id="boardPass" size="35" maxlength="7" class="boxTF">-->
+<!--                                </dd>-->
+<!--                            </dl>-->
+<!--                        </div>-->
+                        <div id="bbsCreated_content">
+                            <dl>
+                                <dt>내&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;용</dt>
+                                <dd>
+                                    <textarea name="boardContents" rows="12" cols="63" class="boxTA" th:text="${boardUpdate.boardContents}"> </textarea>
+
+                                </dd>
+                                <dd>
+                                    <input type="hidden" name="boardHits" th:value="${boardUpdate.boardHits}">
+
+                                </dd>
+
+                            </dl>
+                        </div>
+                    </div>
+                    <div id="bbsCreated_footer"> <input type="submit" value="글수정" class="btn2">
+                        <input type="reset" value="다시입력" class="btn2" >
+
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+<footer th:include="fragments/footer :: footer"></footer>
+</body>
+
+
+</html>

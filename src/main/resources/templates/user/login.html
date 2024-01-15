@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+
+<head>
+    <meta name ="google-signin-client_id" content="605131676584-vj9ia482euahr00k900b8dc1d4e2h9u3.apps.googleusercontent.com">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name ="google-signin-client_id" content="605131676584-vj9ia482euahr00k900b8dc1d4e2h9u3.apps.googleusercontent.com">
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+
+    <script th:src="@{/js/header.js}"></script>
+    <title>주차의 민족
+    </title>
+
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "eL2rD3ATwZFP2lSwcWbqY",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+            src="https://www.chatbase.co/embed.min.js"
+            chatbotId="eL2rD3ATwZFP2lSwcWbqY"
+            domain="www.chatbase.co"
+            defer>
+    </script>
+</head>
+
+<body>
+<div class="container"></div>
+<header th:include="fragments/header :: header"></header>
+<section>
+    <div class="loginform">
+        <h2>ALL PARKING</h2>
+        <form class="login" th:action="@{/member/loginProc}" th:method="post" th:object="${userLoginDTO}">
+            <p class="login1">login</p>
+            <p th:for="username">ACOUNT ID <input type="text" class="textbox" th:field="*{username}" placeholder="아이디를 입력해 주세요."></p>
+            <p th:for="password">PASSWORD <input type="password" class="textbox" th:field="*{password}"placeholder="비밀번호를 입력해 주세요"></p>
+            <p id="login-fail" class="error-div" style="border: 0px;" hidden="hidden">아이디 또는 비밀번호가 일치하지 않습니다.</p>
+            <div class="find">
+                <div class="input">
+                    <input type="checkbox">
+                    <p>아이디 저장</p>
+                </div>
+                <div>
+                    <p><a href="">아이디/비밀번호 찾기</a></p>
+                </div>
+            </div>
+
+            <input type="submit" name="로그인" id="login" class="loginput" value="login">
+        </form>
+        <p class="next">다음 계정으로 로그인</p>
+        <div class="athor">
+            <form  action="kakao-login">
+                <a href="">
+                    <img th:src="@{/image/kakao.png}" alt="" onclick="kakaoLogin(); "></a>
+            </form>
+            <a href="javascript:void(0)" id="naverIdLogin_loginButton">
+                <img th:src="@{/image/naver.png}" alt="" ></a>
+            <a href="javascript:void(0)" id="GgCustomLogin">
+                <img th:src="@{/image/google.png}" alt=""></a>
+        </div>
+        <!--            <input type="button" class="join" value="회원가입">-->
+        <a href="/member/join" class="join">
+            <p>회원가입</p>
+        </a>
+    </div>
+    <iframe
+            src="https://www.chatbase.co/chatbot-iframe/eL2rD3ATwZFP2lSwcWbqY"
+            frameborder="0"
+            style="display: none"
+    ></iframe>
+
+</section>
+<footer th:include="fragments/footer :: footer"></footer>
+<script th:inline="javascript">
+    window.onload = function () {
+        if (location.href.includes("error")) {
+            var loginFailElement = document.getElementById("login-fail");
+            loginFailElement.removeAttribute("hidden");
+        }
+    }
+
+</script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script>
+    //카카오 소셜 로그인
+    Kakao.init('fb3c981e903c5be29841cd676cd2d2fb'); //발급받은 키 중 javascript키를 사용해준다.
+    console.log(Kakao.isInitialized()); // sdk초기화여부판단
+    //카카오로그인
+    function kakaoLogin() {
+        Kakao.Auth.login({
+            success: function (response) {
+                Kakao.API.request({
+                    url: '/v2/user/me',
+                    success: function (response) {
+                        console.log(response)
+                    },
+                    fail: function (error) {
+                        console.log(error)
+                    },
+                })
+            },
+            fail: function (error) {
+                console.log(error)
+            },
+        })
+    }
+</script>
+<script>
+    //네이버 소셜 로그인
+    var naverLogin = new naver.LoginWithNaverId(
+        {
+            clientId: "ngCX3k4JfAjOZyLIOgCr", //내 애플리케이션 정보에 cliendId를 입력해줍니다.
+            callbackUrl: "https://allparking.kr/naverLogin", // 내 애플리케이션 API설정의 Callback URL 을 입력해줍니다.
+            isPopup: false,
+            callbackHandle: true
+        }
+    );
+
+    naverLogin.init();
+
+    window.addEventListener('load', function () {
+        naverLogin.getLoginStatus(function (status) {
+            if (status) {
+                var email = naverLogin.user.getEmail(); // 필수로 설정할것을 받아와 아래처럼 조건문을 줍니다.
+
+                console.log(naverLogin.user);
+
+                if( email == undefined || email == null) {
+                    alert("이메일은 필수정보입니다. 정보제공을 동의해주세요.");
+                    naverLogin.reprompt();
+                    return;
+                }
+            } else {
+                console.log("callback 처리에 실패하였습니다.");
+            }
+        });
+    });
+
+
+    var testPopUp;
+    function openPopUp() {
+        testPopUp= window.open("https://nid.naver.com/nidlogin.logout", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,width=1,height=1");
+    }
+    function closePopUp(){
+        testPopUp.close();
+    }
+
+    // 구글 소셜 로그잉ㄴ
+    //처음 실행하는 함수
+    function init() {
+        gapi.load('auth2', function() {
+            gapi.auth2.init();
+            options = new gapi.auth2.SigninOptionsBuilder();
+            options.setPrompt('select_account');
+            // 추가는 Oauth 승인 권한 추가 후 띄어쓰기 기준으로 추가
+            options.setScope('email profile openid https://www.googleapis.com/auth/user.birthday.read');
+            // 인스턴스의 함수 호출 - element에 로그인 기능 추가
+            // GgCustomLogin은 li태그안에 있는 ID, 위에 설정한 options와 아래 성공,실패시 실행하는 함수들
+            gapi.auth2.getAuthInstance().attachClickHandler('GgCustomLogin', options, onSignIn, onSignInFailure);
+        })
+    }
+
+    function onSignIn(googleUser) {
+        var access_token = googleUser.getAuthResponse().access_token
+        $.ajax({
+            // people api를 이용하여 프로필 및 생년월일에 대한 선택동의후 가져온다.
+            url: 'https://people.googleapis.com/v1/people/me'
+            // key에 자신의 API 키를 넣습니다.
+            , data: {personFields:'birthdays', key:'AIzaSyApjnpyBzuVZVNJc6wpWajDgv6cvlb1oZI', 'access_token': access_token}
+            , method:'GET'
+        })
+            .done(function(e){
+                //프로필을 가져온다.
+                var profile = googleUser.getBasicProfile();
+                console.log(profile)
+            })
+            .fail(function(e){
+                console.log(e);
+            })
+    }
+    function onSignInFailure(t){
+        console.log(t);
+    }
+
+
+</script>
+<script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+</body>
+
+</html>

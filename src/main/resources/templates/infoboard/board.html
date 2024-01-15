@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/board.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+
+    <script th:src="@{/js/header.js}"></script>
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "eL2rD3ATwZFP2lSwcWbqY",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+            src="https://www.chatbase.co/embed.min.js"
+            chatbotId="eL2rD3ATwZFP2lSwcWbqY"
+            domain="www.chatbase.co"
+            defer>
+    </script>
+    <title>board</title>
+
+</head>
+
+<body>
+<div class="container"></div>
+<header th:insert="fragments/header :: header"></header>
+<section>
+    <div class="bord">
+        <div id="bbs">
+            <div id="bbs_title">
+                <h2>공지사항</h2>
+            </div>
+            <div>
+                <div class="form_a">
+                    <div class="title">
+                        <p>번호</p>
+                        <p th:text="${board.id}"></p>
+                    </div>
+                    <div class="title">
+                        <p>제목</p>
+                        <p th:text="${board.boardTitle}"></p>
+                    </div>
+                    <div class="wirte_form">
+                        <div>
+                            <p>작 성 자</p>
+                            <p th:text="${board.boardWriter}"></p>
+                        </div>
+                        <div>
+                            <p>시 간</p>
+                            <p th:text="${board.boardCreatedTime}"></p>
+                        </div>
+                        <div>
+                            <p>조회수</p>
+                            <p th:text="${board.boardHits}"></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <div class="detail">
+                    <p th:text="${board.boardContents}"></p>
+                </div>
+                <div id="bbsCreated_footer">
+                    <button class="btn2" onclick="listReq()">목록</button>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    <button class="btn2" onclick="updateReq()" sec:authorize="hasRole('ADMIN')">수정</button>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    <button class="btn2" onclick="deleteReq()" sec:authorize="hasRole('ADMIN')">삭제</button>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <iframe
+            src="https://www.chatbase.co/chatbot-iframe/eL2rD3ATwZFP2lSwcWbqY"
+            frameborder="0"
+            style="display: none"
+    ></iframe>
+</section>
+<footer th:include="fragments/footer :: footer"></footer>
+</body>
+<script th:inline="javascript">
+    const listReq = () => {
+        console.log("목록 요청");
+        const page = [[${page}]];
+        location.href = "/info/paging?page=" + page;
+    }
+    const updateReq = () => {
+        console.log("수정 요청");
+        const id = [[${board.id}]];
+        location.href = "/info/update/" + id;
+    }
+    const deleteReq = () => {
+        console.log("삭제 요청");
+        const id = [[${board.id}]];
+        location.href = "/info/delete/" + id;
+    }
+
+</script>
+
+</html>

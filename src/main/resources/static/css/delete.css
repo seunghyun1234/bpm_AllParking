@@ -1,0 +1,25 @@
+section {
+    height: 1200px;
+    width: 100%;
+    z-index: -1;
+}
+section > .song{
+    position: absolute;
+    top: 400px;
+    left: 50%;
+    margin-left: -200px;
+}
+/*------------------------------------------*/
+@media screen and (min-width: 625px) {
+    .sign_phone{
+        display: none;
+    }
+}
+
+@media all and (max-width: 500px) {
+    section {
+        position: relative;
+        height: 830px;
+        box-sizing: border-box;
+    }
+}

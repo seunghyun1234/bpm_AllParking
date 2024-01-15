@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+
+    <script th:src="@{/js/header.js}"></script>
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "eL2rD3ATwZFP2lSwcWbqY",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+            src="https://www.chatbase.co/embed.min.js"
+            chatbotId="eL2rD3ATwZFP2lSwcWbqY"
+            domain="www.chatbase.co"
+            defer>
+    </script>
+    <title>ALL PARKING
+    </title>
+</head>
+<body>
+<div class="container"></div>
+<header th:insert="fragments/header :: header"></header>
+<section>
+    <div class="keyboard">
+        <span class="key">A</span>
+        <span class="key">L</span>
+        <span class="key">L</span>
+        <span class="key">&nbsp;</span>
+        <span class="key">P</span>
+        <span class="key">A</span>
+        <span class="key">R</span>
+        <span class="key">K</span>
+        <span class="key">I</span>
+        <span class="key">N</span>
+        <span class="key">G</span>
+        <h2 >
+            <span class="key1">Buliding Powerfull Mellody</span>
+        </h2>
+    </div>
+
+    <iframe
+            src="https://www.chatbase.co/chatbot-iframe/eL2rD3ATwZFP2lSwcWbqY"
+            frameborder="0"
+            style="display: none"
+    ></iframe>
+</section>
+
+<footer th:include="fragments/footer :: footer"></footer>
+</body>
+</html>

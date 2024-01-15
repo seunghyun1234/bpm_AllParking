@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/boardwrite.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+
+    <script th:src="@{/js/header.js}"></script>
+    <title>ALL PARKING
+    </title>
+
+</head>
+
+<body>
+<div class="container"></div>
+<header th:insert="fragments/header :: header"></header>
+    <section>
+        <form action="/board/savePcro" method="post" class="bord">
+            <div id="bbs">
+                <div id="bbs_title">
+                    <h2>글 작 성</h2>
+                </div>
+                <div>
+                    <div id="bbsCreated">
+                        <div class="bbsCreated_bottomLine">
+                            <dl>
+                                <dt>제&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;목</dt>
+                                <dd> <input type="text" name="boardTitle" size="60" maxlength="100" class="boxTF" placeholder="제목을 입력하세요" /> </dd>
+                            </dl>
+                        </div>
+                        <div class="bbsCreated_bottomLine">
+                            <dl>
+                            <dt>작성자</dt>
+                            <dd>
+                                <input type="hidden" name="boardWriter" size="35" maxlength="20" class="boxTF" th:value="${username}"  readonly />
+
+                                <p class="boxTF" th:text="${username}"></p>
+                            </dd>
+                            </dl>
+                        </div>
+<!--                        <div class="bbsCreated_noLine">-->
+<!--                            <dl>-->
+<!--                                <dt>패스워드</dt>-->
+<!--                                <dd> <input type="password" name="boardPass" size="35" maxlength="7" class="boxTF" />-->
+<!--                                </dd>-->
+<!--                            </dl>-->
+<!--                        </div>-->
+
+                        <div id="bbsCreated_content">
+                            <dl>
+                                <dt>내&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;용</dt>
+                                <dd> <textarea rows="12" cols="63" name="boardContents" class="boxTA" placeholder="내용을 입력하세요"></textarea> </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div id="bbsCreated_footer"> <input type="submit" value=" 등록하기 " class="btn2" />
+                        <input type="reset" value=" 다시입력 " class="btn2" />
+                        <input type="button" value=" 작성취소 " class="btn2" />
+                    </div>
+                </div>
+            </div>
+            </form>
+
+    </section>
+
+<footer th:include="fragments/footer :: footer"></footer>
+</body>
+</html>

@@ -1,0 +1,207 @@
+
+/*--------------------------------------------------------*/
+section {
+    height: 1100px;
+    width: 100%;
+    z-index: -1;
+}
+.join{
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.join h2{
+    font-size: 30px;
+}
+.bt{
+    width: 90px;
+    height: 30px;
+    margin-top: 5px;
+    background-color: black;
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+}
+.basic{
+    width: 500px;
+    height: 600px;
+    text-align: left;
+    margin-left: 150px;
+    margin-top: 70px;
+}
+.basic p{
+    margin-top: 10px;
+}
+.basic h3{
+    margin-top: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+}
+.basic div{
+    margin-top: 20px;
+    border-bottom: 1px solid rgb(204, 204, 204);
+}
+.basic .text{
+    width: 140px;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.car{
+    width: 500px;
+    height: 300px;
+}
+.basic div{
+    justify-content: space-between;
+    display: flex;
+}
+.id .text{
+    margin-left: 95px;
+    border: 0px;
+
+}
+.joininfo .text{
+    width: 180px;
+
+}
+.id span{
+    margin-top: 10px;
+    width: 180px;
+}
+.basic .pw{
+    justify-content: flex-start;
+}
+.pw input{
+    margin-left: 80px;
+    border: 0px;
+}
+.basic .pw1{
+    justify-content: flex-start;
+}
+.pw1 input{
+    margin-left: 47px;
+    border: 0px;
+}
+.basic .name{
+    justify-content: flex-start;
+}
+.name input{
+    margin-left: 110px;
+    border: 0px;
+}
+.basic .number{
+    justify-content: flex-start;
+}
+.number input{
+    margin-left: 80px;
+    border: 0px;
+}
+.mail .text{
+    margin-left: 95px;
+    border: 0px;
+}
+.carinfo .text{
+    margin-left: -40px;
+    border: 0px;
+}
+.basic .check{
+    font-size: 15px;
+}
+.basic .bt1{
+    justify-content: space-evenly;
+    border: 0px;
+}
+.submit{
+    width: 150px;
+    height: 50px;
+    margin-top: 50px;
+    border: 0px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+/* .id{
+    justify-content: space-between;
+    display: flex;
+}
+.mail{
+    justify-content: space-between;
+    display: flex;
+}
+.carinfo{
+    justify-content: space-between;
+    display: flex;
+} */
+/*-------------------------------------------------------*/
+@media screen and (min-width: 625px) {
+    .sign_phone{
+        display: none;
+    }
+
+}
+@media all and (max-width: 500px) {
+    footer {
+        display: none;
+    }
+    section{
+        width: 360px;
+        height: 1200px;
+    }
+    .join{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 480px;
+    }
+    .basic{
+        width: 360px;
+        margin: 0 auto;
+    }
+    label{
+        margin: 0 auto;
+        width: 400px;
+    }
+    .joininfo .text{
+        width: 170px;
+    }
+    .id .text{
+        margin-left: 75px;
+    }
+    .pw .text{
+        margin-left: 60px;
+    }
+    .pw1 .text{
+        margin-left: 25px;
+    }
+    .name .text{
+        margin-left: 90px;
+    }
+    .number .text{
+        margin-left: 60px;
+    }
+    .mail .text{
+        margin-left: 75px;
+    }
+    .carinfo .text{
+        margin-left: 60px;
+    }
+    .error-div{
+        margin-left: 30px;
+    }
+    .carinfo{
+        width: 360px;
+    }
+    .bt{
+        width: 65px;
+        height: 35px;
+    }
+}

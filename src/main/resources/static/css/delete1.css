@@ -1,0 +1,34 @@
+
+.song{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.song form{
+    text-align: center;
+}
+.song input{
+    margin-top: 19px;
+}
+.song button{
+    width: 100px;
+    height: 50px;
+    border: 0px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/*------------------------------------------*/
+@media screen and (min-width: 625px) {
+    .sign_phone{
+        display: none;
+    }
+}
+
+@media all and (max-width: 500px) {
+    section {
+        box-sizing: border-box;
+    }
+}

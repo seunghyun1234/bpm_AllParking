@@ -1,0 +1,263 @@
+/*--------------------------------------------------------*/
+body {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.sec1 {
+    position: absolute;
+    display: flex;
+    width: 1300px;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+}
+
+.sec1 > .parking1 img {
+    position: relative;
+    height: 450px;
+    width: 450px;
+    z-index: -99;
+}
+
+.sec1 > .me1 {
+    padding-top: 100px;
+    padding-right: 60px;
+    z-index: -99;
+}
+
+.me1 h2 {
+    font-size: 40px;
+}
+
+section .sec2 {
+    width: 100%;
+}
+
+.sec2 .me2 {
+    justify-content: space-between;
+    text-align: center;
+    display: flex;
+    font-size: 20px;
+    position: absolute;
+    width: 1100px;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.me2 h3 {
+    font-size: 27px;
+}
+
+.me2 img {
+    width: 200px;
+    height: 200px;
+    margin: 40px;
+    opacity: 0;
+}
+
+section .sec3 {
+    width: 100%;
+}
+
+.sec3 .me3 {
+    justify-content: space-between;
+    text-align: center;
+    display: flex;
+    font-size: 20px;
+    position: absolute;
+    width: 1300px;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+}
+
+.me3 img {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+    max-width: 100%;
+}
+
+.me3 .p3 {
+    position: absolute;
+    left: 50%;
+    top: 35%;
+}
+
+.me4 {
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translateX(-50%);
+}
+
+.parking3 {
+    width: 1200px;
+    height: 450px;
+}
+
+
+section .moveTopBtn {
+    position: fixed;
+    display: inline;
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+    transition: 0.7s ease;
+    left: 50%;
+    bottom: 5%;
+    z-index: 99;
+    transform: translateX(-50%);
+}
+
+section .moveTopBtn.on {
+    opacity: 1;
+    cursor: pointer;
+    bottom: 0;
+}
+
+section .moveTopBtn.onn {
+    position: absolute;
+    /* bottom: 350px; */
+    /* z-index: 99; */
+    /* bottom: -120px; */
+    top: 110%;
+}
+
+/*-------------------------------------------------------*/
+
+
+/*-------------------------------------------------------*/
+
+@media screen and (min-width: 625px) {
+.sign_phone{
+    display: none;
+}
+
+}
+
+@media all and (max-width: 500px) {
+    section {
+        position: relative;
+        height: 830px;
+        box-sizing: border-box;
+    }
+
+    .sec1 {
+        width: 360px;
+        height: 250px;
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .sec1 .me1 {
+        padding: 0;
+    }
+
+    .me1 h2 {
+        font-size: 20px
+    }
+
+    .me1 p {
+        font-size: 15px;
+    }
+
+    .sec1 > .parking1 img {
+        width: 360px;
+        height: 360px;
+        margin-top: 30px;
+    }
+
+    /*---------------------------*/
+    .sec2 .me2 {
+        width: 380px;
+        height: 250px;
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .me2 h3 {
+        font-size: 20px;
+    }
+
+    .me2 p {
+        font-size: 15px;
+    }
+
+    .me2 img {
+        width: 50px;
+        height: 50px;
+    }
+
+    /*---------------------------------------*/
+    .me4 {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .me4 img {
+        width: 400px;
+        height: 150px;
+    }
+
+    /*---------------------------------------*/
+    .sec3 .me3 {
+        width: 360px;
+        height: 250px;
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .me3 img {
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        top: -10%;
+        transform: translate(-50%, -50%);
+    }
+    .p3{
+        position: absolute;
+        padding-top: 300px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .p3 h2 {
+        font-size: 20px;
+    }
+    .p3 p {
+        width: 360px;
+        font-size: 15px;
+    }
+    /*---------------------------------------*/
+    section .moveTopBtn.onn{
+
+        top: 90%;
+    }
+
+    /*---------------------------------------*/
+    footer {
+        display: none;
+    }
+}

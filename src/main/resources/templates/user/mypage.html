@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/mypage.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+
+    <script th:src="@{/js/header.js}"></script>
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "eL2rD3ATwZFP2lSwcWbqY",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+            src="https://www.chatbase.co/embed.min.js"
+            chatbotId="eL2rD3ATwZFP2lSwcWbqY"
+            domain="www.chatbase.co"
+            defer>
+    </script>
+    <title>주차의 민족
+    </title>
+
+
+
+</head>
+
+<body>
+    <div class="container"></div>
+    <header th:insert="fragments/header :: header"></header>
+
+    <section>
+        <div class="join">
+            <h2>ALL PARKING</h2>
+            <div class="basic">
+                <h3>MY PAGE</h3>
+                <div class="id">
+                    <p th:for="username">아이디</p>
+                    <p class="text" th:text="${user?.username}"></p>
+                </div>
+<!--                <div class="pw">-->
+<!--                    <p>비밀번호</p>-->
+<!--                    <input type="password" class="text">-->
+<!--                </div>-->
+                <div class="name">
+                    <p th:for="name">이름</p>
+                    <p class="text" th:text="${user?.name}"></p>
+                </div>
+                <div class="number">
+                    <p th:for="phone">휴대전화</p>
+
+                    <p  class="text" th:text="${user?.phone}"></p>
+                </div>
+                <div class="mail">
+                    <p th:for="useremail">이메일</p>
+                    <p class="text" th:text="${user?.useremail}"></p>
+                </div>
+                <h3>차량정보</h3>
+                <div class="carinfo">
+                    <p th:for="carNum">차량번호</p>
+                    <p  class="text" th:text="${user?.carNum}"></p>
+                </div>
+                <div class="bt1">
+                    <input type="button" class="submit" name="회원정보 수정" value="회원정보 수정" onclick="location.href='/member/edit'">
+                    <input type="button" class="submit" name="취소" value="취소" onclick="location.href='/'">
+                </div>
+            </div>
+        </div>
+        <iframe
+                src="https://www.chatbase.co/chatbot-iframe/eL2rD3ATwZFP2lSwcWbqY"
+                frameborder="0"
+                style="display: none"
+        ></iframe>
+    </section>
+    <footer th:include="fragments/footer :: footer"></footer>
+</body>
+
+</html>

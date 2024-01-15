@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" th:href="@{/css/join.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+
+    <script th:src="@{/js/header.js}"></script>
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "eL2rD3ATwZFP2lSwcWbqY",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+            src="https://www.chatbase.co/embed.min.js"
+            chatbotId="eL2rD3ATwZFP2lSwcWbqY"
+            domain="www.chatbase.co"
+            defer>
+    </script>
+    <title>ALL PARKING
+    </title>
+</head>
+
+<body>
+<div class="container"></div>
+<header th:include="fragments/header :: header"></header>
+<section>
+    <form class="join" action="/member/joinProc" method="post" th:object="${userJoinDTO}">
+        <h2>ALL PARKING</h2>
+        <div class="basic">
+            <h3>기본정보</h3>
+            <div class="id joininfo">
+                <!--                <p>아이디</p>-->
+                <label th:for="username">아이디
+
+                    <input type="text" class="text" name="username" th:field="*{username}" placeholder="아이디를 입력해 주세요."
+                           th:errorclass="error-input"/>
+                    <span th:class="error-div" th:errors="*{username}"></span>
+                </label>
+                <!--                onblur="idCheck()"-->
+
+                <!--                <span id="check-result"></span>-->
+                <!--                    <input type="button" class="bt" name="중복확인" value="중복확인">-->
+            </div>
+            <div class="pw joininfo">
+                <label th:for="password">비밀번호
+                    <input type="password" class="text" name="password" th:field="*{password}"
+                           placeholder="비밀번호를 입력해 주세요"
+                           th:errorclass="error-input"/>
+                    <span th:class="error-div" th:errors="*{password}"></span>
+                </label>
+            </div>
+            <div class="pw1 joininfo">
+                <label>비밀번호 확인
+                    <input type="password" class="text" th:field="*{passwordCheck}" placeholder="한번 더 입력해 주세요"
+                           th:errorclass="error-input"/>
+
+                    <span th:class="error-div" th:errors="*{passwordCheck}"></span>
+                </label>
+            </div>
+            <div class="name joininfo">
+                <label th:for="name">이름
+                    <input type="text" class="text" name="name" th:field="*{name}" placeholder="이름을 입력해 주세요"
+                           th:errorclass="error-input"/>
+                    <span th:class="error-div" th:errors="*{name}"></span>
+                </label>
+            </div>
+            <div class="number joininfo">
+                <label th:for="phone">휴대전화
+                    <input type="tel" class="text" name="phone" th:field="*{phone}" placeholder="전화번호를 입력해주세요"
+                           th:errorclass="error-input">
+                    <span th:class="error-div" th:errors="*{phone}"></span>
+                </label>
+            </div>
+            <div class="mail joininfo">
+                <label th:for="useremail">이메일
+                    <input type="email" class="text" name="useremail" th:field="*{useremail}"
+                           placeholder="Email을 입력해주세요"
+                           th:errorclass="error-input">
+                    <span th:class="error-div" th:errors="*{useremail}"></span>
+                </label>
+<!--                    <input type="button" class="bt" name="본인인증" value="본인인증">-->
+
+            </div>
+            <h3>차량정보</h3>
+            <div class="carinfo joininfo">
+                <p>차량번호</p>
+                <input type="text" class="text" name="carNum" id="carNum" placeholder="차량정보를 입력해 주세요">
+                <input type="button" class="bt" name="등록하기" value="등록하기">
+            </div>
+            <h3>약관동의</h3>
+            <p class="check">
+                <input type="checkbox" name="agreement" th:field="*{agreement}" required>&nbsp;&nbsp;이용약관 및 개인정보수집 및 이용
+                수신(선택)에 모두 동의합니다.</p>
+            <span th:class="error-div" th:if="${#fields.hasErrors('agreement')}" th:errors="*{agreement}"></span>
+            <div class="bt1">
+                <input type="submit" class="submit" name="회원가입" value="회원가입">
+                <input type="button" class="submit" name="취소" value="취소">
+            </div>
+        </div>
+    </form>
+    <iframe
+            src="https://www.chatbase.co/chatbot-iframe/eL2rD3ATwZFP2lSwcWbqY"
+            frameborder="0"
+            style="display: none"
+    ></iframe>
+</section>
+<footer th:include="fragments/footer :: footer"></footer>
+</body>
+<script th:inline="javascript">
+    const idCheck = () => {
+        const id = document.getElementById("memberId").value;
+        const checkResult = document.getElementById("check-result");
+        console.log("입력값: " + id);
+        $.ajax({
+            //요청방식 post ,url: "email-check",데이터:이메일
+            type: "post",
+            url: "/member/id-check",
+            data: {
+                "memberId": id
+            },
+            success: function (res) {
+                console.log("요청성공", res)
+                if (res == "ok") {
+                    console.log("사용가능한 아이디 입니다.");
+                    checkResult.style.color = "green";
+                    checkResult.innerHTML = "사용가능한 아이디 입니다."
+                } else {
+                    console.log("이미 사용중인 아이디 입니다.");
+                    checkResult.style.color = "red";
+                    checkResult.innerHTML = "이미 사용중인 아이디 입니다."
+                }
+
+            },
+            error: function (err) {
+                console.log("에러발생", err);
+            }
+
+        });
+
+    }
+    const check_save = () => {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const name = document.getElementById("name").value;
+        const useremail = document.getElementById("useremail").value;
+        const phone = document.getElementById("phone").value;
+        const carNum = document.getElementById("carNum").value;
+
+        $.ajax({
+            type: "post",
+            url: "/member/saveProc",
+            data: {
+                username: username,
+                password: password,
+                name: name,
+                useremail: useremail,
+                phone: phone,
+                carNum: carNum
+            },
+            dataType: "text",
+            success: function (ck) {
+                console.log(ck)
+                if (ck === 'save_success') {
+                    alert("회원가입 실패")
+                    location.href = "/member/join"
+
+                } else {
+                    alert("회원가입 축하")
+                    location.href = "/member/login"
+
+                }
+            },
+            error: function (ck) {
+                console.log(ck);
+            }
+        })
+
+    }
+</script>
+</script>
+</html>

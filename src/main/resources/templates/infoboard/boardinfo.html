@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/boardinfo.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+
+    <script th:src="@{/js/header.js}"></script>
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "eL2rD3ATwZFP2lSwcWbqY",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+            src="https://www.chatbase.co/embed.min.js"
+            chatbotId="eL2rD3ATwZFP2lSwcWbqY"
+            domain="www.chatbase.co"
+            defer>
+    </script>
+    <title>주차의 민족
+    </title>
+
+
+</head>
+
+<body>
+<div class="container"></div>
+<header th:insert="fragments/header :: header"></header>
+<section>
+    <div class="bord">
+        <h2>공지사항</h2>
+        <table class="bord-table">
+            <thead>
+            <tr>
+                <th scope="col" class="th-num">번호</th>
+                <th scope="col" class="th-title">제목</th>
+                <th scope="col" class="th-name">글쓴이</th>
+                <th scope="col" class="th-date">등록일</th>
+                <th scope="col" class="th-date">조회수</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>3</td>
+                <th>
+                    <a href="#">[공지사항] 개인정보 처리방침 변경안내처리방침</a>
+                </th>
+                <td>관리자</td>
+                <td>2023.01.01</td>
+                <td>0</td>
+
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <th><a href="#">공지사항 안내입니다. 이용해주셔서 감사합니다</a></th>
+                <td>관리자</td>
+                <td>2023.01.01</td>
+                <td>0</td>
+            </tr>
+            <tr th:each="board: ${boardList}">
+                <td th:text="${board.id}"></td>
+                <th><a th:href="@{|/info/${board.id}|(page=${boardList.number + 1})}" th:text="${board.boardTitle}"></a>
+                </th>
+                <td th:text="${board.boardWriter}"></td>
+                <td th:text="*{#temporals.format(board.boardCreatedTime, 'yyyy-MM-dd ')}"></td> <!--HH:mm:ss-->
+                <td th:text="${board.boardHits}"></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="page">
+            <div class="paging">
+                <a th:href="@{/info/paging(page=1)}"><<</a>
+                <!-- 이전 링크 활성화 비활성화 -->
+                <!-- boardList.getNumber() 사용자:2페이지 getNumber()=1 -->
+                <a th:href="${boardList.first} ? '#' : @{/board/paging(page=${boardList.number})}">이전</a>
+
+                <!-- 페이지 번호 링크(현재 페이지는 숫자만)
+                        for(int page=startPage; page<=endPage; page++)-->
+                <span th:each="page: ${#numbers.sequence(startPage, endPage)}">
+<!-- 현재페이지는 링크 없이 숫자만 -->
+                <span th:if="${page == boardList.number + 1}" th:text="${page}"></span>
+                    <!-- 현재페이지 번호가 아닌 다른 페이지번호에는 링크를 보여줌 -->
+                <span th:unless="${page == boardList.number + 1}">
+                    <a th:href="@{/info/paging(page=${page})}" th:text="${page}"></a>
+                </span>
+            </span>
+
+                <!-- 다음 링크 활성화 비활성화
+                    사용자: 2페이지, getNumber: 1, 3페이지-->
+                <a th:href="${boardList.last} ? '#' : @{/info/paging(page=${boardList.number + 2})}">다음</a>
+                <!-- 마지막 페이지로 이동 -->
+                <a th:href="@{/info/paging(page=${boardList.totalPages})}">>></a>
+            </div>
+        </div>
+        <ul>
+            <li><select name="serch date" id="serch date">
+                <option value="week"> 일주일</option>
+                <option value="month">한달</option>
+                <option value="3month">세달</option>
+                <option value="all">전체</option>
+            </select></li>
+            <li><select name="serch key" id="serch key">
+                <option value="subject">제목</option>
+                <option value="content">내용</option>
+                <option value="writer_name">글쓴이</option>
+
+            </select></li>
+            <input type="text">
+            <button>검색하기</button>
+            <button onclick="saveReq()" sec:authorize="hasRole('ADMIN')">글쓰기</button>
+
+        </ul>
+    </div>
+    <iframe
+            src="https://www.chatbase.co/chatbot-iframe/eL2rD3ATwZFP2lSwcWbqY"
+            frameborder="0"
+            style="display: none"
+    ></iframe>
+
+</section>
+<footer th:include="fragments/footer :: footer"></footer>
+</body>
+<script>
+    const saveReq = () => {
+        location.href = "/info/save";
+
+    }
+</script>
+
+</html>

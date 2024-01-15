@@ -1,0 +1,135 @@
+
+/*--------------------------------------------------------*/
+section {
+    position: relative;
+    width: 100%;
+    height: 83vh;
+    display: flex;
+}
+
+.bbsCreaate_bottomLine{
+    width: 800px;
+}
+
+.bbsCreaate_bottomLine>dl{
+    display: flex;
+}
+
+.bord{
+    position: absolute;
+    top:55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    margin-bottom: 100px;
+}
+.bord h2{
+    font-size: 40px;
+}
+.bord dl{
+    width: 800px;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    border-bottom: 1px solid #cfcfcf;
+}
+
+#bbsCreated {
+    width: 800px;
+    padding: 10px;
+    border-top: 1px solid black;
+}
+#bbsCreated_footer{
+    width: 400px;
+   justify-content: space-between;
+   display: flex;
+   margin-left: 200px;
+}
+#bbsCreated_content{
+    margin-left: 30px;
+}
+#bbsCreated_content textarea{
+    margin-left: 30px;
+}
+.btn2{
+    width: 80px;
+    height: 40px;
+    font-size: 15px;
+    border-radius: 0;
+    border: 0;
+    color: white;
+    background-color: black;
+}
+.boxTF{
+    height: 25px;
+    border: 0px;
+    margin-bottom: 10px;
+    width: 500px;
+}
+.boxTA{
+    width: 500px;
+    margin-bottom: 9px;
+}
+/*-------------------------------------------------------*/
+@media screen and (min-width: 625px) {
+    .sign_phone{
+        display: none;
+    }
+
+}
+@media all and (max-width: 500px) {
+    footer {
+        display: none;
+    }
+    section{
+        height: 500px;
+    }
+    .bord h2{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .bord{
+        width: 360px;
+        margin: 0 auto;
+        position: absolute;
+        top: 30%;
+        transform: translateX(-50%);
+    }
+    .bord dl{
+        width: 340px;
+    }
+    form{
+        width: 360px;
+    }
+    bbsCreated_bottomLine{
+        display: none;
+    }
+    .hidden_input{
+        display: none;
+    }
+    .bbsCreated_bottomLine dl dt{
+        width: 70px;
+    }
+    #bbsCreated{
+        width: 360px;
+        border: 0.5px solid #666;
+        border-radius: 10px;
+    }
+    #bbsCreated_content{
+        margin-left: 0;
+    }
+    .boxTF{
+        width: 240px;
+    }
+    .boxTA{
+        width: 250px;
+        height: 150px;
+        margin-top: 5px;
+    }
+    #bbsCreated_footer{
+        width: 250px;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+}

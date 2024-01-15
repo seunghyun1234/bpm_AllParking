@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/charge.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <script th:src="@{/js/header.js}"></script>
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "eL2rD3ATwZFP2lSwcWbqY",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+            src="https://www.chatbase.co/embed.min.js"
+            chatbotId="eL2rD3ATwZFP2lSwcWbqY"
+            domain="www.chatbase.co"
+            defer>
+    </script>
+    <title>ALL PARKING
+    </title>
+    <script>
+
+    </script>
+
+
+</head>
+
+<body>
+<div class="container"></div>
+<header th:insert="fragments/header :: header"></header>
+<section>
+    <h2>충전하기</h2>
+    <form class="charge_form1">
+        <div class="form1">
+            <p>***님 </p>
+            <a href="/member/mypage">마이페이지</a>
+        </div>
+        <div class="form2">
+            <p>캐시 잔액</p>
+            <h3>0원</h3>
+        </div>
+    </form>
+    <form class="charge_form2" method="post" action="/kakaoPay">
+
+        <div class="form3">
+            <h1>캐시 충전하기</h1>
+            <div class="pay">
+                <input type="radio" name="chk">신용카드<br>
+                <input type="radio" name="chk">계좌이체<br>
+                <input type="radio" name="chk">카카오페이<br>
+                <input type="radio" name="chk">삼성페이
+            </div>
+            <input type="submit" value="충전하기" class="ioi"/>
+        </div>
+    </form>
+    <iframe
+            src="https://www.chatbase.co/chatbot-iframe/eL2rD3ATwZFP2lSwcWbqY"
+            frameborder="0"
+            style="display: none"
+    ></iframe>
+
+
+</section>
+<footer th:include="fragments/footer :: footer"></footer>
+</body>
+
+</html>

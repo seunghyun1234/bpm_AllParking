@@ -1,0 +1,204 @@
+
+/*--------------------------------------------------------*/
+section {
+    height: 1200px;
+    width: 100%;
+    z-index: -1;
+}
+.join{
+    position: absolute;
+    width: 800px;
+    height: 750px;
+    text-align: center;
+    top: 130px;
+    left: 560px;
+}
+.join h2{
+    font-size: 30px;
+}
+.bt{
+    width: 90px;
+    height: 30px;
+    margin-top: 5px;
+    background-color: black;
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.basic{
+    width: 500px;
+    height: 600px;
+    text-align: left;
+    margin-left: 150px;
+    margin-top: 70px;
+}
+.basic h3{
+    margin-top: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+}
+.basic div{
+    margin-top: 20px;
+    border-bottom: 1px solid rgb(204, 204, 204);
+}
+.basic .text{
+    width: 160px;
+    height: 30px;
+    margin-bottom: 15px;
+}
+.car{
+    width: 500px;
+    height: 300px;
+}
+.basic div{
+    justify-content: space-between;
+    display: flex;
+}
+.basic .id{
+    justify-content: start;
+}
+.basic .id label{
+    display: flex;
+}
+.basic .id .text{
+    margin-left: 95px;
+}
+.id .text{
+    margin-left: -30px;
+    border: 0px;
+}
+.basic .pw{
+    justify-content: space-between;
+}
+.basic .pw label{
+    display: flex;
+}
+.pw input{
+    margin-left: 80px;
+    border: 0px;
+}
+.basic .pw1{
+    justify-content: flex-start;
+}
+.basic .pw1 label{
+    display: flex;
+}
+.pw1 input{
+    margin-left: 62px;
+    border: 0px;
+}
+.basic .pw2 label{
+    display: flex;
+}
+.pw2 p{
+    width: 115px;
+}
+.pw2 input{
+    margin-left: 25px;
+    border: 0px;
+}
+.basic .name{
+    justify-content: flex-start;
+}
+.basic .name label{
+    display: flex;
+}
+.name input{
+    margin-left: 110px;
+    border: 0px;
+}
+.basic .number{
+    justify-content: flex-start;
+}
+.basic .number label{
+    display: flex;
+}
+.number input{
+    margin-left: 80px;
+    border: 0px;
+}
+.basic .mail{
+    justify-content: start;
+}
+.basic .mail label{
+    display: flex;
+}
+.basic .mail .text{
+    margin-left: 95px;
+}
+.mail .text{
+    margin-left: -30px;
+    border: 0px;
+}
+.basic .carinfo label{
+    display: flex;
+}
+.carinfo .text{
+    border: 0px;
+    margin-left: 80px;
+}
+.basic .check{
+    font-size: 15px;
+}
+.basic .bt1{
+    justify-content: space-evenly;
+    border: 0px;
+}
+.submit{
+    width: 150px;
+    height: 50px;
+    margin-top: 50px;
+    border: 0px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* .id{
+    justify-content: space-between;
+    display: flex;
+}
+.mail{
+    justify-content: space-between;
+    display: flex;
+}
+.carinfo{
+    justify-content: space-between;
+    display: flex;
+} */
+/*-------------------------------------------------------*/
+@media screen and (min-width: 625px) {
+    .sign_phone{
+        display: none;
+    }
+
+}
+@media all and (max-width: 500px) {
+    footer {
+        display: none;
+    }
+
+    .join {
+        width: 360px;
+        margin: 0;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .basic {
+        width: 360px;
+        margin-left: 0;
+    }
+    .basic .text{
+        width: 100px;
+    }
+    .carinfo{
+        width: 360px;
+    }
+    .carinfo .text{
+        width: 220px;
+    }
+}

@@ -1,0 +1,431 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+html {
+    font-family: "Noto Sans KR", sans-serif;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/*--------------------------------------------------------*/
+section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    height: 83vh;
+}
+
+.team {
+    width: 1200px;
+    position: absolute;
+    top: 45%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+}
+
+.team h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.member {
+    display: flex;
+    justify-content: space-between;
+    width: 1000px;
+    text-align: center;
+    margin: auto;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+section .team .member img {
+    width: 170px;
+    height: 170px;
+}
+
+.button {
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    margin-top: 100px;
+    margin-left: -10px;
+    line-height: 15px;
+    cursor: pointer;
+    border: 0px;
+    background-color: white;
+}
+
+.modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(0,0,0,0.1);  */
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+
+.modal_content1 {
+    width: 1100px;
+    height: 500px;
+    background: white;
+    border: 1px solid #666;
+    border-radius: 10px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    box-sizing: border-box;
+    padding: 75px 0;
+    line-height: 23px;
+    cursor: pointer;
+
+}
+
+.modal_content2 {
+    width: 1100px;
+    height: 500px;
+    background: white;
+    border: 1px solid #666;
+    border-radius: 10px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    line-height: 25px;
+    cursor: pointer;
+}
+
+.modal_content3 {
+    width: 1100px;
+    height: 500px;
+    background: white;
+    border: 1px solid #666;
+    border-radius: 10px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    box-sizing: border-box;
+    padding: 75px 0;
+    line-height: 23px;
+    cursor: pointer;
+}
+
+.modal_content4 {
+    width: 1100px;
+    height: 500px;
+    background: white;
+    border: 1px solid #666;
+    border-radius: 10px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    box-sizing: border-box;
+    padding: 75px 0;
+    line-height: 23px;
+    cursor: pointer;
+}
+
+.modal_content5 {
+    width: 1100px;
+    height: 500px;
+    background: white;
+    border: 1px solid #666;
+    border-radius: 10px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    box-sizing: border-box;
+    padding: 75px 0;
+    line-height: 23px;
+    cursor: pointer;
+}
+
+.contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    font-size: 13px;
+}
+
+.contents1 {
+    margin-left: 40px;
+}
+.contents1 h3{
+}
+
+section .team .modal .modal_content1 .contents img {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width: 180px;
+    height: 230px;
+    border-radius: 5px;
+}
+
+section .team .modal .modal_content2 .contents img {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width: 180px;
+    height: 230px;
+    border-radius: 5px;
+}
+
+section .team .modal .modal_content3 .contents img {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width: 180px;
+    height: 230px;
+    border-radius: 5px;
+}
+
+section .team .modal .modal_content4 .contents img {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width: 180px;
+    height: 230px;
+    border-radius: 5px;
+}
+
+section .team .modal .modal_content5 .contents img {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width: 180px;
+    height: 230px;
+    border-radius: 5px;
+}
+
+.content1 {
+    font-size: 12px;
+    display: block;
+}
+
+.content2 {
+    width: 185px;
+    display: flex;
+    margin-left: 20px;
+}
+
+.my1 {
+    width: 100px;
+}
+
+.my2 {
+    text-align: right;
+    width: 120px;
+}
+
+span {
+    font-size: 11px;
+}
+
+strong {
+    color: #0077FFFF;
+}
+
+h3 {
+    color: #0077FFFF;
+}
+
+/*-------------------------------------------------------*/
+.skill-progress {
+    width: 200px;
+    padding-right: 25px;
+}
+
+.skill-progress h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.item {
+    transition: 0.4s;
+}
+
+.item p {
+    overflow: hidden; /*p태그 높이 회복*/
+    margin-bottom: 0; /* p태그 자체가 차지하는 마진을 없애기 */
+}
+
+/* p태그안에 있는 span을 왼쪽, 오른쪽 정렬을 시켜야함 */
+.item p span:nth-child(1) { /*span:first-child*/
+    float: left;
+}
+
+.item p span:nth-child(2) { /*span:end-child*/
+    float: right;
+}
+
+.progress {
+    border: 1px solid #999;
+    padding: 2px;
+    border-radius: 3px;
+}
+
+/* 그라데이션 막대 */
+.progress-level {
+    height: 10px;
+    background: linear-gradient(to right, #cfcfcf, #0077FFFF); /*방향(deg각도도 가능), 시작색상, 종료색상*/
+    animation: ani;
+    animation-duration: 1s; /*1초만에 발생한 애니메이션이 끝나게 함*/
+    animation-fill-mode: both;
+    /*애니메이션이 반복이 끝나면 -> 무조건 keyframe에서 100%구간에 머무르게 해라
+    애니메이션은 기본적으로, 0%->100%->0%로 진행됨.
+    근데, animation-fill-mode 설정이 없으면 100%구간에서 멈추지 않고 애니메이션이 부자연스러움
+    100%구간에서 멈추게 해서 -> 로딩 후, 바로 꽉찬 막대를 만들기 위해 fill-mode를 사용
+    */
+}
+
+/* 처음 로드될 때, 그라데이션바들이 서서히 차오르는 애니메이션 주기 */
+@keyframes ani {
+    0% {
+        width: 0; /*시작할 때만 width가 0이게만 하면 됨*/
+    }
+}
+
+/*--------------------------------------------*/
+@media screen and (min-width: 625px) {
+    .sign_phone {
+        display: none;
+    }
+
+}
+
+@media all and (max-width: 500px) {
+    footer {
+        display: none;
+    }
+
+    section {
+        display: inline-block;
+    }
+
+    .team {
+        width: 360px;
+        height:1550px;
+        position: absolute;
+        top: 120%;
+    }
+
+    .member {
+        width: 360px;
+        height: 800px;
+        display: inline-block;
+    }
+
+    section .team .member img {
+        width: 120px;
+        height: 120px;
+    }
+
+    /*--------------------------------------------*/
+    .modal_content1 {
+        width: 360px;
+        height: 660px;
+        position: absolute;
+        top: 20%;
+        padding: 15px 0;
+        line-height: 20px;
+    }
+    .modal_content2 {
+        width: 360px;
+        height: 670px;
+        position: absolute;
+        top: 35%;
+        padding: 15px 0;
+        line-height: 20px;
+    }
+    .modal_content3 {
+        width: 360px;
+        height: 640px;
+        position: absolute;
+        top: 50%;
+        padding: 15px 0;
+        line-height: 20px;
+    }
+    .modal_content4 {
+        width: 360px;
+        height: 695px;
+        position: absolute;
+        top: 65%;
+        padding: 15px 0;
+        line-height: 20px;
+    }
+    .modal_content5 {
+        width: 360px;
+        height: 675px;
+        position: absolute;
+        top: 72%;
+        padding: 15px 0;
+        line-height: 20px;
+    }
+
+    hr {
+        margin-top: -5px;
+        margin-bottom: -5px;
+    }
+
+    section .team .modal .modal_content1 .contents img {
+        width: 100px;
+        height: 135px;
+    }
+    section .team .modal .modal_content2 .contents img {
+        width: 100px;
+        height: 135px;
+    }
+    section .team .modal .modal_content3 .contents img {
+        width: 100px;
+        height: 135px;
+    }
+    section .team .modal .modal_content4 .contents img {
+        width: 100px;
+        height: 135px;
+    }
+    section .team .modal .modal_content5 .contents img {
+        width: 100px;
+        height: 135px;
+    }
+
+    .contents {
+        display: block;
+        font-size: 11px;
+    }
+
+    .content1 {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .content2 {
+        width: 200px;
+        margin-top: 30px;
+        margin-right: 20px;
+    }
+
+    .contents1 {
+        margin: 0 20px;
+        margin-top: 10px;
+    }
+
+    .contents1 h3 {
+        font-size: 12px;
+        padding-left: 0;
+    }
+
+    .skill-progress{
+        width: 310px;
+        padding: 0;
+    }
+}

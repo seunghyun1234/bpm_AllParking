@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/editmy.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+
+    <script th:src="@{/js/header.js}"></script>
+    <script>
+        window.embeddedChatbotConfig = {
+            chatbotId: "eL2rD3ATwZFP2lSwcWbqY",
+            domain: "www.chatbase.co"
+        }
+    </script>
+    <script
+            src="https://www.chatbase.co/embed.min.js"
+            chatbotId="eL2rD3ATwZFP2lSwcWbqY"
+            domain="www.chatbase.co"
+            defer>
+    </script>
+    <title>ALL PARKING
+    </title>
+
+</head>
+<body>
+<div class="container"></div>
+<header th:insert="fragments/header :: header"></header>
+<section>
+    <div class="join">
+        <h2>ALL PARKING</h2>
+        <form class="basic" th:action="@{/member/editProc}" th:method="post" th:object="${userDTO}">
+            <input type="hidden" name="id">
+            <h3>기본정보</h3>
+            <div class="id">
+
+                <label th:for="username">
+                    <p>아이디</p>
+                    <input type="text" class="text" th:field="*{username}" readonly/>
+                </label>
+            </div>
+            <div class="pw">
+                <label th:for="nowPassword">
+                    <p>비밀번호</p>
+                    <input type="password" class="text" th:field="*{nowPassword}" placeholder="현재 비밀번호를 입력해주세요"
+                           th:errorclass="error-input"/>
+                <span th:class="error-div" th:errors="*{nowPassword}"></span>
+
+                </label>
+            </div>
+            <div class="pw1">
+                <label th:for="newPassword">
+                    <p>새 비밀번호</p>
+                    <input type="password" class="text" th:field="*{newPassword}" placeholder="새 비밀번호를 입력해주세요"
+                           th:errorclass="error-input"/>
+                </label>
+                <span th:class="error-div" th:errors="*{newPassword}"></span>
+            </div>
+            <div class="pw2">
+                <label th:for="newPasswordCheck">
+                    <p>새 비밀번호 확인</p>
+                    <input type="password" class="text" th:field="*{newPasswordCheck}"
+                           placeholder="새 비밀번호를 한번 더 입력해주세요"/>
+                </label>
+                <span th:class="error-div" th:errors="*{newPasswordCheck}"></span>
+            </div>
+            <div class="name">
+                <label th:for="name">
+                    <p>이름</p>
+                    <input type="text" class="text" th:field="*{name}"/>
+                </label>
+            </div>
+            <div class="number">
+                <label th:for="phone">
+                    <p>휴대전화</p>
+                    <input type="tel" class="text" th:field="*{phone}"/>
+                </label>
+            </div>
+            <div class="mail">
+                <label th:for="useremail">
+                    <p>이메일</p>
+                    <input type="text" class="text" th:field="*{useremail}">
+                </label>
+            </div>
+            <h3>차량정보</h3>
+            <div class="carinfo">
+                <label th:for="carNum">
+                    <p>차량번호</p>
+                    <input type="text" class="text" th:field="*{carNum}">
+                </label>
+
+            </div>
+            <div class="bt1">
+                <input type="submit" class="submit" name="회원정보 변경" value="확인">
+                <input type="button" class="submit" name="취소" value="회원탈퇴" onclick="location.href='/member/delete'">
+            </div>
+        </form>
+    </div>
+    <iframe
+            src="https://www.chatbase.co/chatbot-iframe/eL2rD3ATwZFP2lSwcWbqY"
+            frameborder="0"
+            style="display: none"
+    ></iframe>
+</section>
+<footer th:include="fragments/footer :: footer"></footer>
+</body>
+
+</html>

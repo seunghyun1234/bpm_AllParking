@@ -1,0 +1,264 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+html {
+    font-family: "Noto Sans KR", sans-serif;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    color: #333;
+}
+
+header {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    border-bottom: 2px solid rgb(0, 119, 255);
+    background-color: white;
+    z-index: 9999;
+}
+
+.logo img {
+    position: absolute;
+    font-size: 50px;
+    top: 1%;
+    left: 10%;
+    height: 100px;
+    width: 250px;
+}
+
+ul {
+    list-style: none;
+}
+
+.menu {
+    position: absolute;
+    left: 52%;
+    margin-left: -497.3px;
+    justify-content: space-between;
+    top: -1px;
+    height: 100px;
+    width: 1000px;
+    display: flex;
+    line-height: 95px;
+    padding-right: 2px;
+    text-align: center;
+}
+
+.menu > li {
+    width: 250px;
+    text-align: center;
+}
+
+.menu > .font {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.sign {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    right: -30%;
+    /*bottom: 27px;*/
+    margin-top: 27px;
+    height: 50px;
+    width: 200px;
+    font-size: 15px;
+}
+
+.sign > li {
+    line-height: 50px;
+    display: block;
+    text-align: center;
+    width: 100px;
+}
+
+.container {
+    display: none;
+    position: fixed;
+    top: 100px;
+    height: 200px;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid #cfcfcf;
+    opacity: 0.95;
+    z-index: 999;
+}
+
+.sub {
+    display: none;
+    list-style: none;
+    font-size: 18px;
+    font-weight: 300;
+    height: 206px;
+    margin-left: 44px;
+    margin-top: 17px;
+    z-index: 999;
+}
+
+.sub > li {
+    height: 60px;
+    line-height: 60px;
+    width: 165px;
+}
+
+a {
+    text-decoration-line: none;
+    color: inherit;
+}
+
+.sub li a:hover {
+    font-weight: bold;
+    color: black;
+}
+
+*, *:before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+.hidden {
+    display: none;
+}
+/*------------------------------------------------------------------*/
+.error-input {
+    border-color: red;
+}
+
+.error-div {
+    font-size: 13px;
+    color: red;
+}
+/*------------------------------------------------------------------*/
+@media screen and (min-width: 625px) {
+    #menu {
+        display: flex;
+    }
+    .menu_phone {
+        display: none;
+    }
+    .mini_menu{
+        display: none;
+    }
+    .mini_sign{
+        display: none;
+    }
+}
+@media all and (max-width: 500px) {
+    header {
+        width: 100%;
+        height: 80px;
+        display: flex;
+    }
+    .logo img{
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        width: 150px;
+        height: 70px;
+        transform: translateX(-50%);
+    }
+    .menu {
+        display: none;
+    }
+    .sign{
+        display: none;
+    }
+
+    .menu_phone a img{
+        position: absolute;
+        top: 30%;
+        left: 5%;
+        width: 35px;
+        height: 35px;
+        font-weight: bold;
+    }
+    .menu_phone {
+        list-style: none;
+        margin: 0;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+    }
+    .mini_menu {
+        width: 100%;
+        position: absolute;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: none;
+        top: 80px;
+        background-color: white;
+        opacity: 0.9;
+    }
+
+    .mini_menu li {
+        padding: 10px;
+        text-align: center;
+        cursor: pointer;
+        list-style: none;
+    }
+
+    .sub_menu {
+        display: none;
+    }
+
+    .sub_menu li {
+        padding: 8px;
+        text-align: center;
+        background-color: #999;
+        cursor: pointer;
+    }
+/*--------------------------------------------------*/
+    .sign_phone a img{
+        position: absolute;
+        top: 30%;
+        left: 88%;
+        width: 35px;
+        height: 35px;
+        font-weight: bold;
+    }
+    .sign_phone {
+        list-style: none;
+        margin: 0;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+    }
+    .mini_sign {
+        width: 100%;
+        position: absolute;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: none;
+        top: 80px;
+        background-color: white;
+        opacity: 0.9;
+    }
+
+    .mini_sign li {
+        padding: 10px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .sub_menu {
+        display: none;
+    }
+
+    .sub_menu li {
+        padding: 8px;
+        text-align: center;
+        background-color: #999;
+        cursor: pointer;
+    }
+
+}

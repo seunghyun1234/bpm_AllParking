@@ -1,0 +1,193 @@
+
+/*--------------------------------------------------------*/
+section {
+    position: relative;
+    width: 100%;
+    height: 83vh;
+    display: flex;
+}
+#bbs_title{
+    border-bottom: 1px solid black;
+}
+#bbs_title h2{
+    font-size: 40px;
+}
+.bord{
+    width: 1000px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-bottom: 80px;
+}
+.form_a{
+    width: 1000px;
+    padding: 0px 0px 10px 10px;
+    margin: 10px 0px 20px 0px;
+    border-bottom: 1px solid #e7e7e7;
+}
+.form_a .wirte_form{
+    width: 400px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.bord .form_a{
+    justify-content: space-between;
+    display: flex;
+    text-align: center;
+}
+#bbsCreated_footer {
+    width: 500px;
+    margin-left: 250px;
+    justify-content: center;
+    display: flex;
+}
+#bbsCreated_footer .btn2{
+width: 100px;
+height: 40px;
+border: 0px;
+border-radius: 0px;
+color: white;
+background-color: black;
+}
+.cmm{
+    width: 1000px;
+}
+.comment-title{
+    font-size: 20px;
+    color: #cfcfcf;
+    border-bottom: 1px solid #cfcfcf;
+}
+.comment{
+    width: 1000px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.com{
+    width: 1000px;
+    display: flex;
+    border-bottom: 1px solid #cfcfcf;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 3px solid #cfcfcf;
+    text-align: center;
+}
+.com table{
+    width: 1000px;
+}
+.comment input{
+    width: 600px;
+    height: 30px;
+}
+#commentWriter{
+    width: 150px;
+}
+.comment button{
+    width: 100px;
+    height: 35px;
+    border: 0px;
+    background-color: black;
+    color: white;
+}
+.modify{
+    width: 50px;
+    height: 30px;
+    border: 0px;
+    color: white;
+    background-color: black;
+}
+.date{
+    margin-top: 15px;
+}
+.a{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.detail{
+    height: 100px;
+}
+/*----------------------------*/
+.d_num{
+    width: 90px;
+}
+.d_writer{
+    width: 90px;
+}
+.d_contents{
+    width: 500px;
+}
+.d_time{
+    width: 250px;
+}
+button{
+    cursor: pointer;
+}
+/*-------------------------------------------------------*/
+@media screen and (min-width: 625px) {
+    .sign_phone{
+        display: none;
+    }
+
+}
+@media all and (max-width: 500px) {
+    footer {
+        display: none;
+    }
+    .bord{
+        width: 360px;
+        margin-top: 90px;
+    }
+    .form_a{
+        width: 360px;
+    }
+    .form_a .wirte_form{
+        width: 280px;
+    }
+    .form_a div{
+        font-size: 14px;
+    }
+    .detail{
+        height: 100px;
+    }
+    #bbsCreated_footer{
+        width: 360px;
+        margin-left: 0;
+    }
+    .comment{
+        width: 360px;
+    }
+    .comment input{
+        width: 130px;
+    }
+    .comment-title{
+        margin-top: 30px;
+    }
+    .comment button{
+        width: 80px;
+        height: 30px;
+    }
+    #commentWriter{
+        width: 60px;
+    }
+    .d_num{
+        width: 150px;
+    }
+    .d_writer{
+        width: 120px;
+    }
+    .d_contents{
+        width: 400px;
+    }
+    .com{
+        width: 360px;
+    }
+    .com table{
+        width: 360px;
+        font-size: 15px;
+    }
+}
